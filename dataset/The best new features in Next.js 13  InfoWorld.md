@@ -4,11 +4,11 @@ All told, Next.js 13 is a significant milestone, bringing together advancements 
 
 Table of Contents
 
--   [The new Turbopack bundler](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-1)
--   [Using the Turbopack in Next.js 13](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-2)
--   [The new /app directory](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-3)
--   [Layouts in Next.js 13](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-4)
--   [React Server Components](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-5)
+- [The new Turbopack bundler](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-1)
+- [Using the Turbopack in Next.js 13](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-2)
+- [The new /app directory](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-3)
+- [Layouts in Next.js 13](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-4)
+- [React Server Components](https://www.infoworld.com/article/3679489/the-best-new-features-in-nextjs-13.html#toc-5)
 
 Show More
 
@@ -61,6 +61,7 @@ Turbopack works as an opt-in replacement for Next.js's devmode server for the mo
 When you run `npm run dev`, you’ll see a screen like the one below.
 
 [![The Next.js 13 turbopack dev mode welcome screen.](https://images.idgesg.net/images/article/2022/11/nextjs-fig1-100934437-large.jpg?auto=webp&quality=85,70)](https://images.idgesg.net/images/article/2022/11/nextjs-fig1-100934437-orig.jpg?auto=webp&quality=85,70 "<div class='credit'>IDG</div>
+
 <p>The Next.js 13 Turbopack dev mode welcome screen. The left-hand menu shows several examples of new functionality in Next.js 13.</p>
 ") IDG
 
@@ -87,7 +88,7 @@ Now let’s look at our directory layout, where you will notice the new `/app` d
 
 The `/app` directory lives next to the familiar `/pages` directory and supports more advanced routing and layout capabilities. Routes that match in both `/pages` and `/app` will go to `/app`, so you can gradually supersede existing routes.
 
-The basic routing in `/app` is similar to `/pages` in that the nested folders describe the URL path, so `/app/foo/bar/page.js` becomes `localhost:3000/foo/bar` in our `dev` setup. 
+The basic routing in `/app` is similar to `/pages` in that the nested folders describe the URL path, so `/app/foo/bar/page.js` becomes `localhost:3000/foo/bar` in our `dev` setup.
 
 ### Enabling the /app directory
 
@@ -166,7 +167,7 @@ Basically, the `loading.tsx` file in Listing 5 shows a grid of SkeletonCard comp
 
 ## Better data fetching in Next.js 13
 
-The Next.js data loading methods ([getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props), [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props), and [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)) are now deprecated in favor of a newer approach to data fetching. 
+The Next.js data loading methods ([getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props), [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props), and [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)) are now deprecated in favor of a newer approach to data fetching.
 
 The first convention is to load data on the server, which has become simpler because all the components are server components by default. This eliminates the tendency to bounce data requests from the client off the server, when you really only need to directly hit the data store from the server and send the rendered UI to the client. See the [Next.js documentation](https://beta.nextjs.org/docs/data-fetching/fundamentals#fetching-data-with-server-components) for a longer account of the reasoning behind preferring server-side data fetching.
 
@@ -174,7 +175,7 @@ Data fetching in the `/app` directory has to work with streaming and suspense. 
 
 All of this makes for a simpler architecture for data fetching that is still optimized. Developers can think less about data fetching performance and just grab data as it's needed, in the component that needs it.
 
-The new approach means you can use the asynchronous Fetch API that we are familiar with directly in server components. (React and Next extend the API to handle deduping and caching.) You can also define async server components; for example, `export default async function Page()`. See the [Next.js blog](https://nextjs.org/blog/next-13#data-fetching) for more about the new fetch API. 
+The new approach means you can use the asynchronous Fetch API that we are familiar with directly in server components. (React and Next extend the API to handle deduping and caching.) You can also define async server components; for example, `export default async function Page()`. See the [Next.js blog](https://nextjs.org/blog/next-13#data-fetching) for more about the new fetch API.
 
 The overall effect of all these improvements is a simpler application architecture that still benefits from behind-the-scenes performance optimization.
 
@@ -183,5 +184,3 @@ The overall effect of all these improvements is a simpler application architectu
 That’s quite a lot of action in Next.js 13—and there is more that I did not cover. Other new features include updates to the next/image component and a new font-loading system. Overall, Next.js 13 continues the tradition of delivering an all-in-one, React-with-benefits framework that makes it easier to take advantage of a variety of features.
 
 Still, this release is special due to long-term innovations like streaming and server components. When united with Vercel’s infrastructure, Next.js 13 offers considerable ease of deployment and gives us a glimpse of the reactive development experience of the future.
-
-Copyright © 2022 IDG Communications, Inc.

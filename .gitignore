@@ -4,3 +4,4 @@ point_e_model_cache/
 .ipynb_checkpoints/
 .DS_Store
 .env
+.env.local

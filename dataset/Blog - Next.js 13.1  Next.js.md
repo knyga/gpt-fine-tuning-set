@@ -1,12 +1,12 @@
 Next.js 13.1 includes improvements to both the `pages/` (stable) and `app/` (beta) directories:
 
--   [**`app` Directory (Beta) Improvements:**](https://nextjs.org/blog/next-13#improved-reliability-and-support-for-app-directory) Improved reliability and performance.
--   [**Built-in Module Transpilation:**](https://nextjs.org/blog/next-13#built-in-module-transpilation-stable) Bringing `next-transpile-modules` capabilities into core.
--   [**Edge Runtime (Stable):**](https://nextjs.org/blog/next-13#a-light-nodejs-runtime-for-the-edge-now-stable-for-api-routes) A light Node.js runtime for the Edge.
--   [**Turbopack Updates:**](https://nextjs.org/blog/next-13#turbopack-improvements) Support for Tailwind CSS, `next/image`, `@next/font`, and more.
--   [**Middleware Improvements:**](https://nextjs.org/blog/next-13#nextjs-advanced-middleware) Return responses and set request headers.
--   [**SWC Import Resolution:**](https://nextjs.org/blog/next-13#import-resolution-for-smaller-bundles) For smaller JavaScript bundles when using barrel files.
--   [Memory usage improvements, new templates, and more!](https://nextjs.org/blog/next-13#other-improvements)
+- [**`app` Directory (Beta) Improvements:**](https://nextjs.org/blog/next-13#improved-reliability-and-support-for-app-directory) Improved reliability and performance.
+- [**Built-in Module Transpilation:**](https://nextjs.org/blog/next-13#built-in-module-transpilation-stable) Bringing `next-transpile-modules` capabilities into core.
+- [**Edge Runtime (Stable):**](https://nextjs.org/blog/next-13#a-light-nodejs-runtime-for-the-edge-now-stable-for-api-routes) A light Node.js runtime for the Edge.
+- [**Turbopack Updates:**](https://nextjs.org/blog/next-13#turbopack-improvements) Support for Tailwind CSS, `next/image`, `@next/font`, and more.
+- [**Middleware Improvements:**](https://nextjs.org/blog/next-13#nextjs-advanced-middleware) Return responses and set request headers.
+- [**SWC Import Resolution:**](https://nextjs.org/blog/next-13#import-resolution-for-smaller-bundles) For smaller JavaScript bundles when using barrel files.
+- [Memory usage improvements, new templates, and more!](https://nextjs.org/blog/next-13#other-improvements)
 
 Update today by running:
 
@@ -20,16 +20,16 @@ In Next.js 13, we announced the new `app` directory (beta). This new routing and
 
 The `app` directory provides many benefits, including enhanced layouts, co-location of components, tests, and styles, component-level data fetching, and more. Thanks to your feedback and early testing, we've made several improvements to the reliability of the `app` directory:
 
--   **No Layout Divs:** Previously, the `app` directory added additional `<div>` elements to scroll layouts into view when navigating. With 13.1, these extra elements are no longer created. The scrolling behavior is preserved.
--   **TypeScript Plugin:** We've built a new TypeScript plugin that provides suggestions for page and layout configuration options, brings documentation directly into your IDE, and provides helpful usage hints around Server and Client Components (such as preventing the use of `useState` in Server Components). [Learn more](https://www.youtube.com/watch?v=pqMqn9fKEf8).
--   **Reliability Improvements:** We've patched numerous bugs, including improved CSS modules support, correctly de-duplicating `cache()` and `fetch()` for layouts and pages, memory leaks, and more.
--   **Less Client-Side JavaScript:** The `app` directory now includes `9.3kB` less client-side JavaScript than the `pages` directory. This baseline doesn't increase whether you add 1 or 1000 Server Components to your application. The React runtime is temporarily slightly larger, the increase is caused by the React Server Components runtime, which handles mechanics that Next.js previously handled. We are working to reduce this further.
+- **No Layout Divs:** Previously, the `app` directory added additional `<div>` elements to scroll layouts into view when navigating. With 13.1, these extra elements are no longer created. The scrolling behavior is preserved.
+- **TypeScript Plugin:** We've built a new TypeScript plugin that provides suggestions for page and layout configuration options, brings documentation directly into your IDE, and provides helpful usage hints around Server and Client Components (such as preventing the use of `useState` in Server Components). [Learn more](https://www.youtube.com/watch?v=pqMqn9fKEf8).
+- **Reliability Improvements:** We've patched numerous bugs, including improved CSS modules support, correctly de-duplicating `cache()` and `fetch()` for layouts and pages, memory leaks, and more.
+- **Less Client-Side JavaScript:** The `app` directory now includes `9.3kB` less client-side JavaScript than the `pages` directory. This baseline doesn't increase whether you add 1 or 1000 Server Components to your application. The React runtime is temporarily slightly larger, the increase is caused by the React Server Components runtime, which handles mechanics that Next.js previously handled. We are working to reduce this further.
 
-|   | pages/ | **app/** | delta |
-| --- | --- | --- | --- |
+|                     | pages/       | **app/**    | delta              |
+| ------------------- | ------------ | ----------- | ------------------ |
 | Total First Load JS | **Baseline** | **\-9.3kB** | **12.1%**_smaller_ |
-| Next.js Runtime | **Baseline** | **\-12kB** | **56.8%**_smaller_ |
-| React Runtime | **Baseline** | **+2.7kB** | **5.2%**_larger_ |
+| Next.js Runtime     | **Baseline** | **\-12kB**  | **56.8%**_smaller_ |
+| React Runtime       | **Baseline** | **+2.7kB**  | **5.2%**_larger_   |
 
 We're excited about continuing to make progress on the stability of the `app` directory. The [beta documentation](https://beta.nextjs.org/) for the `app` directory has had hundreds of updates [based on your feedback](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation).
 
@@ -123,16 +123,16 @@ After releasing the [Turbopack](https://turbo.build/pack) alpha with Next.js 13,
 
 Since Next.js 13.0.0, Turbopack:
 
--   Supports PostCSS, including Tailwind CSS
--   Supports `next/image`
--   Supports `@next/font` (Google Fonts)
--   Supports loading CSS from dynamic `import()` statements
--   Supports CSS source maps (thank you `@ahabhgk` for [their contribution](https://github.com/vercel/turbo/pull/2839))
--   Improved error handling in `next dev` error overlay
--   Improved memory usage
--   Improved CSS modules support
--   Improved chunking algorithm for HMR updates
--   Improved reliability for HMR source maps
+- Supports PostCSS, including Tailwind CSS
+- Supports `next/image`
+- Supports `@next/font` (Google Fonts)
+- Supports loading CSS from dynamic `import()` statements
+- Supports CSS source maps (thank you `@ahabhgk` for [their contribution](https://github.com/vercel/turbo/pull/2839))
+- Improved error handling in `next dev` error overlay
+- Improved memory usage
+- Improved CSS modules support
+- Improved chunking algorithm for HMR updates
+- Improved reliability for HMR source maps
 
 We are thankful to Evan You and the Vite community for their feedback and contributions to ensure the Turbopack benchmarks are as accurate as possible. We've worked together with the Vite team to validate the latest Turbopack benchmarks and make numerous improvements to our testing methodology.
 
@@ -176,22 +176,9 @@ Learn more about [Next.js advanced Middleware](https://nextjs.org/docs/advanced-
 
 ## [Other improvements](https://nextjs.org/blog/next-13#other-improvements)
 
--   `@next/font` now supports adding multiple font weights and styles in the same font declaration. [Learn more](https://nextjs.org/docs/basic-features/font-optimization#google-fonts).
--   `next/dynamic` now uses React primitives `lazy()` and `<Suspense>`. The previous `suspense` option is no longer required. With these changes, `next/dynamic` is now compatible with the `app` directory.
--   `create-next-app` has been updated with a new design, now including [`@next/font`](https://nextjs.org/docs/basic-features/font-optimization) by default for automatic self-hosting of fonts with zero layout shift. Try it out with `npx create-next-app@latest` or [deploy the template](https://vercel.com/templates/next.js/nextjs-boilerplate).
--   We've made numerous improvements to the [App Directory Playground](https://app-dir.vercel.app/), which showcases some of the latest features and conventions of the `app` directory (beta) in Next.js 13. [Deploy your own](https://vercel.com/templates/next.js/app-directory).
--   We've created a [high-performance image gallery template](https://vercel.com/templates/next.js/image-gallery-starter), which includes image placeholders, lazy loading, automatic optimization, keyboard support, and more. [Deploy your own](https://vercel.com/templates/next.js/image-gallery-starter).
--   We've created a resource for understanding how to [migrate a large, open-source React and Express.js application](https://vercel.com/blog/migrating-a-large-open-source-react-application-to-next-js-and-vercel) to Next.js, including a detailed walkthrough and links back to specific commits.
-
-## [Community](https://nextjs.org/blog/next-13#community)
-
-Next.js is the result of the combined work of over 2,400 individual developers, industry partners like Google and Meta, and our core team at Vercel. With over 3.6 million npm downloads per week and 97,900+ GitHub stars, Next.js is one of the most popular ways of building the Web.
-
-Join the community on [GitHub Discussions](https://github.com/vercel/next.js/discussions), [Reddit](https://www.reddit.com/r/nextjs/), and [Discord](https://nextjs.org/discord).
-
-This release was brought to you by:
-
--   The **Next.js** team: [Balazs](https://github.com/balazsorban44), [Hannes](https://github.com/hanneslund), [Jan](https://github.com/jankaifer), [Jiachi](https://github.com/huozhi), [Jimmy](https://github.com/feedthejim), [JJ](https://github.com/ijjk), [Josh](https://github.com/gnoff), [Sebastian](https://github.com/sebmarkbage), [Shu](https://github.com/shuding), [Steven](https://github.com/styfle), [Tim](https://github.com/timneutkens), and [Wyatt](https://github.com/wyattjoh).
--   The **Turbopack** team: [Alex](https://github.com/alexkirsz), [Donny](https://github.com/kdy1), [Justin](https://github.com/jridgewell), [Leah](https://github.com/forsakenharmony), [LongYinan](https://github.com/brooooooklyn), [Maia](https://github.com/padmaia), [OJ](https://github.com/kwonoj), [Tobias](https://github.com/sokra), and [Will](https://github.com/wbinnssmith).
-
-And the contributions of: @aarnadlr, @aaronbrown-vercel, @aaronjy, @abayomi185, @ademilter, @adictonator, @adilansari, @adtc, @alantoa, @aleksa-codes, @alfred-mountfield, @alpha-xek, @andarist, @andykenward, @anujssstw, @artdevgame, @artechventure, @arturbien, @aziyatali, @bennettdams, @bertho-zero, @blue-devil1134, @bot08, @brkalow, @brvnonascimento, @chanceaclark, @chibicode, @chrisipanaque, @chunsch, @colinking, @craigwheeler, @ctjlewis, @cvolant, @danmindru, @davidnx, @delbaoliveira, @devvspaces, @dtinth, @ducanhgh, @duncanogle, @ethomson, @fantaasm, @feugy, @fomichroman, @gruz0, @haschikeks, @hughlilly, @idoob, @iiegor, @imranbarbhuiya, @ingovals, @inokawa, @ishaqibrahimbot, @ismaelrumzan, @jakemstar, @janicklas-ralph, @jaredpalmer, @jaykch, @jimcresswell, @joliss, @josephcsoti, @joshuaslate, @joulev, @jueungrace, @juliusmarminge, @karlhorky, @kikobeats, @kleintorres, @koenpunt, @koltong, @kosai106, @labyrinthitis, @lachlanjc, @laityned, @leerob, @leoortizz, @lorenzobloedow, @lucasassisrosa, @m7yue, @manovotny, @marcus-rise, @matthew-heath, @mattpr, @maxleiter, @maxproske, @meenie, @mmaaaaz, @mnajdova, @moetazaneta, @mrkldshv, @nathanhammond, @nekochantaiwan, @nfinished, @niedziolkamichal, @nocell, @notrab, @nuta, @nutlope, @obusk, @orionmiz, @peraltafederico, @reshmi-sriram, @reyrodrigez, @rightones, @rishabhpoddar, @saseungmin, @serkanbektas, @sferadev, @silvioprog, @sivtu, @soonoo, @sqve, @steven-tey, @sukkaw, @superbahbi, @teobler, @theevilhead, @thomasballinger, @timeyoutakeit, @valentinh, @ws-jm, @wxh06, @yasath, @yutsuten, and @zekicaneksi.
+- `@next/font` now supports adding multiple font weights and styles in the same font declaration. [Learn more](https://nextjs.org/docs/basic-features/font-optimization#google-fonts).
+- `next/dynamic` now uses React primitives `lazy()` and `<Suspense>`. The previous `suspense` option is no longer required. With these changes, `next/dynamic` is now compatible with the `app` directory.
+- `create-next-app` has been updated with a new design, now including [`@next/font`](https://nextjs.org/docs/basic-features/font-optimization) by default for automatic self-hosting of fonts with zero layout shift. Try it out with `npx create-next-app@latest` or [deploy the template](https://vercel.com/templates/next.js/nextjs-boilerplate).
+- We've made numerous improvements to the [App Directory Playground](https://app-dir.vercel.app/), which showcases some of the latest features and conventions of the `app` directory (beta) in Next.js 13. [Deploy your own](https://vercel.com/templates/next.js/app-directory).
+- We've created a [high-performance image gallery template](https://vercel.com/templates/next.js/image-gallery-starter), which includes image placeholders, lazy loading, automatic optimization, keyboard support, and more. [Deploy your own](https://vercel.com/templates/next.js/image-gallery-starter).
+- We've created a resource for understanding how to [migrate a large, open-source React and Express.js application](https://vercel.com/blog/migrating-a-large-open-source-react-application-to-next-js-and-vercel) to Next.js, including a detailed walkthrough and links back to specific commits.

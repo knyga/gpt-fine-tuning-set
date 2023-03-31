@@ -8,18 +8,18 @@ We’ll explore how we can use this UI library to build a simple ecommerce appli
 
 _Jump ahead:_
 
--   [What is a UI library?](https://blog.logrocket.com/getting-started-nextui-next-js/#ui-library)
-    -   [What is NextUI?](https://blog.logrocket.com/getting-started-nextui-next-js/#nextui)
-    -   [Why NextUI?](https://blog.logrocket.com/getting-started-nextui-next-js/#why-nextui)
--   [Setting up Next.js and NextUI](https://blog.logrocket.com/getting-started-nextui-next-js/#setting-next-js-nextui)
--   [Building out our application](https://blog.logrocket.com/getting-started-nextui-next-js/#building-application)
-    -   [Adding a `store-hero` to the homepage](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-store-homepage)
-    -   [Fetching product data](https://blog.logrocket.com/getting-started-nextui-next-js/#fetching-product-data)
-    -   [Creating the `ProductCard` component](https://blog.logrocket.com/getting-started-nextui-next-js/#creating-productcard)
--   [Global state management using Context API](https://blog.logrocket.com/getting-started-nextui-next-js/#global-state-management-context-api)
-    -   [Adding the `Badge` to display the number of cart items](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-badge)
--   [Creating the `CartItem` component](https://blog.logrocket.com/getting-started-nextui-next-js/#creating-cartitem)
-    -   [Adding the `Carts` page](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-carts)
+- [What is a UI library?](https://blog.logrocket.com/getting-started-nextui-next-js/#ui-library)
+  - [What is NextUI?](https://blog.logrocket.com/getting-started-nextui-next-js/#nextui)
+  - [Why NextUI?](https://blog.logrocket.com/getting-started-nextui-next-js/#why-nextui)
+- [Setting up Next.js and NextUI](https://blog.logrocket.com/getting-started-nextui-next-js/#setting-next-js-nextui)
+- [Building out our application](https://blog.logrocket.com/getting-started-nextui-next-js/#building-application)
+  - [Adding a `store-hero` to the homepage](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-store-homepage)
+  - [Fetching product data](https://blog.logrocket.com/getting-started-nextui-next-js/#fetching-product-data)
+  - [Creating the `ProductCard` component](https://blog.logrocket.com/getting-started-nextui-next-js/#creating-productcard)
+- [Global state management using Context API](https://blog.logrocket.com/getting-started-nextui-next-js/#global-state-management-context-api)
+  - [Adding the `Badge` to display the number of cart items](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-badge)
+- [Creating the `CartItem` component](https://blog.logrocket.com/getting-started-nextui-next-js/#creating-cartitem)
+  - [Adding the `Carts` page](https://blog.logrocket.com/getting-started-nextui-next-js/#adding-carts)
 
 ## What is a UI library?
 
@@ -71,7 +71,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
-    
+
     <NextUIProvider>
       <Component {...pageProps} />
     </NextUIProvider>
@@ -164,10 +164,10 @@ Here, we import the [`NextUI Navbar` component](https://nextui.org/docs/componen
 
 If you look closely, you’ll notice that the main `Navbar` component consists of the following sub-components:
 
--   `Navbar.Brand`: A simple and flexible wrapper for branding content
--   `Navbar.Content`: A wrapper that provides the state and variants for the `navbar` content items
--   `Navbar.Item`: Individual items that must be a direct child of `Navbar.Content`
--   `Navbar.Link`: A `link` item that must be a direct child of `Navbar.Content`
+- `Navbar.Brand`: A simple and flexible wrapper for branding content
+- `Navbar.Content`: A wrapper that provides the state and variants for the `navbar` content items
+- `Navbar.Item`: Individual items that must be a direct child of `Navbar.Content`
+- `Navbar.Link`: A `link` item that must be a direct child of `Navbar.Content`
 
 You can view more on the anatomy of the `Navbar` component [here](https://nextui.org/docs/components/navbar#anatomy).
 
@@ -175,10 +175,10 @@ For the cart button, NextUI allows us to change which `tag` component outputs. W
 
 To achieve the user account dropdown menu, we used the `Dropdown` component consisting of the following sub-components:
 
--   `Dropdown.Trigger`: Used to wrap the reference (or `trigger`) element. Similar to `Dropdown.Button` but without the chevron icon
--   `Dropdown.Menu`: The wrapper for the items. Must be a direct child of `Dropdown`
--   `Dropdown.Section`: A wrapper to group-related items
--   `Dropdown.Item`: The individual items. Must be a direct child of `Dropdown.Menu`
+- `Dropdown.Trigger`: Used to wrap the reference (or `trigger`) element. Similar to `Dropdown.Button` but without the chevron icon
+- `Dropdown.Menu`: The wrapper for the items. Must be a direct child of `Dropdown`
+- `Dropdown.Section`: A wrapper to group-related items
+- `Dropdown.Item`: The individual items. Must be a direct child of `Dropdown.Menu`
 
 You can view more on the anatomy of the `Button` [here](https://nextui.org/docs/components/dropdown#anatomy).
 
@@ -390,11 +390,11 @@ const getItem = (cart, product) => {
   return cart.find((item) => item.id === product.id);
 };
 const cartReducer = (state, action) => {
-  
+
   const { product, type } = action;
   const item = getItem(state, product);
-  
-  
+
+
   if (type === "add") {
     return item
       ? state.map((cartItem) =>
@@ -404,9 +404,9 @@ const cartReducer = (state, action) => {
         )
       : [...state, { ...product, quantity: 1 }];
   }
-  
-  
-  
+
+
+
   if (type === "remove") {
     return item.quantity === 1
       ? state.filter((cartItem) => cartItem.id !== product.id)
@@ -416,8 +416,8 @@ const cartReducer = (state, action) => {
             : cartItem
         );
   }
-  
-  
+
+
   if (type === "delete") {
     return state.filter((cartItem) => cartItem.id !== product.id);
   }
@@ -456,7 +456,7 @@ import { CartProvider } from "../modules/AppContext";
 import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
-    
+
     <NextUIProvider>
       <CartProvider>
         <DefaultLayout>
@@ -714,13 +714,3 @@ So far, we’ve been able to build out a simple ecommerce application with NextU
 We also covered how to customize individual components using the `css` prop. Customization can also be applied globally by [customizing the theme](https://nextui.org/docs/theme/customize-theme).
 
 Having covered all that, we’ll be able to extend the features of the ecommerce app and build out other applications using NextUI. Check out the [official docs](https://nextui.org/docs) to learn more about NextUI and some great examples for React and Next.js.
-
-## [LogRocket](https://lp.logrocket.com/blg/nextjs-signup): Full visibility into production Next.js apps
-
-Debugging Next applications can be difficult, especially when users experience issues that are difficult to reproduce. If you’re interested in monitoring and tracking state, automatically surfacing JavaScript errors, and tracking slow network requests and component load time, [try LogRocket](https://lp.logrocket.com/blg/nextjs-signup). [![](https://files.readme.io/27c94e7-Image_2017-06-05_at_9.46.04_PM.png)](https://lp.logrocket.com/blg/nextjs-signup)[![LogRocket Dashboard Free Trial Banner](https://blog.logrocket.com/wp-content/uploads/2017/03/1d0cd-1s_rmyo6nbrasp-xtvbaxfg.png)](https://lp.logrocket.com/blg/nextjs-signup)
-
-[LogRocket](https://lp.logrocket.com/blg/nextjs-signup) is like a DVR for web and mobile apps, recording literally everything that happens on your Next.js app. Instead of guessing why problems happen, you can aggregate and report on what state your application was in when an issue occurred. LogRocket also monitors your app's performance, reporting with metrics like client CPU load, client memory usage, and more.
-
-The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.
-
-Modernize how you debug your Next.js apps — [start monitoring for free](https://lp.logrocket.com/blg/nextjs-signup).

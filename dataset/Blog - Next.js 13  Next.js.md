@@ -1,13 +1,13 @@
 As we announced at [Next.js Conf](https://nextjs.org/conf), Next.js 13 (stable) lays the foundations to be dynamic without limits:
 
--   [**`app` Directory (beta):**](https://nextjs.org/blog/next-13#new-app-directory-beta) Easier, faster, less client JS.
-    -   [**Layouts**](https://nextjs.org/blog/next-13#layouts)
-    -   [**React Server Components**](https://nextjs.org/blog/next-13#server-components)
-    -   [**Streaming**](https://nextjs.org/blog/next-13#streaming)
--   **[Turbopack (alpha):](https://nextjs.org/blog/next-13#introducing-turbopack-alpha)** Up to 700x faster Rust-based Webpack replacement.
--   **[New `next/image`:](https://nextjs.org/blog/next-13#nextimage)** Faster with native browser lazy loading.
--   **[New `@next/font` (beta):](https://nextjs.org/blog/next-13#nextfont)** Automatic self-hosted fonts with zero layout shift.
--   **[Improved `next/link`:](https://nextjs.org/blog/next-13#breaking-changes)** Simplified API with automatic `<a>`.
+- [**`app` Directory (beta):**](https://nextjs.org/blog/next-13#new-app-directory-beta) Easier, faster, less client JS.
+  - [**Layouts**](https://nextjs.org/blog/next-13#layouts)
+  - [**React Server Components**](https://nextjs.org/blog/next-13#server-components)
+  - [**Streaming**](https://nextjs.org/blog/next-13#streaming)
+- **[Turbopack (alpha):](https://nextjs.org/blog/next-13#introducing-turbopack-alpha)** Up to 700x faster Rust-based Webpack replacement.
+- **[New `next/image`:](https://nextjs.org/blog/next-13#nextimage)** Faster with native browser lazy loading.
+- **[New `@next/font` (beta):](https://nextjs.org/blog/next-13#nextfont)** Automatic self-hosted fonts with zero layout shift.
+- **[Improved `next/link`:](https://nextjs.org/blog/next-13#breaking-changes)** Simplified API with automatic `<a>`.
 
 Next.js 13 and the `pages` directory are stable and ready for production. Update today by running:
 
@@ -23,10 +23,10 @@ The `app` directory is currently in beta and we do not recommend using it in pro
 
 The `app` directory includes support for:
 
--   **[Layouts:](https://nextjs.org/blog/next-13#layouts)** Easily share UI between routes while preserving state and avoiding expensive re-renders.
--   **[Server Components:](https://nextjs.org/blog/next-13#server-components)** Making server-first the default for the most dynamic applications.
--   **[Streaming:](https://nextjs.org/blog/next-13#streaming)** Display instant loading states and stream in units of UI as they are rendered.
--   **[Support for Data Fetching:](https://nextjs.org/blog/next-13#data-fetching)** `async` Server Components and extended `fetch` API enables component-level fetching.
+- **[Layouts:](https://nextjs.org/blog/next-13#layouts)** Easily share UI between routes while preserving state and avoiding expensive re-renders.
+- **[Server Components:](https://nextjs.org/blog/next-13#server-components)** Making server-first the default for the most dynamic applications.
+- **[Streaming:](https://nextjs.org/blog/next-13#streaming)** Display instant loading states and stream in units of UI as they are rendered.
+- **[Support for Data Fetching:](https://nextjs.org/blog/next-13#data-fetching)** `async` Server Components and extended `fetch` API enables component-level fetching.
 
 ![](https://nextjs.org/_next/image?url=%2Fstatic%2Fblog%2Flayouts-rfc%2Fapp-folder.png&w=3840&q=75)
 
@@ -145,9 +145,9 @@ In Next.js 12, we began our transition to native Rust-powered tooling. We starte
 
 Using the Turbopack alpha with Next.js 13 results in:
 
--   **700x faster** updates than Webpack
--   **10x faster** updates than Vite
--   **4x faster** cold starts than Webpack
+- **700x faster** updates than Webpack
+- **10x faster** updates than Vite
+- **4x faster** cold starts than Webpack
 
 ![](https://nextjs.org/_next/image?url=%2Fstatic%2Fblog%2Fnext-13%2Fturbopack.png&w=3840&q=75)
 
@@ -169,11 +169,11 @@ During the Next.js Community Survey, **70% of respondents** told us they used th
 
 The new Image component:
 
--   Ships less client-side JavaScript
--   Easier to style and configure
--   More accessible requiring `alt` tags by default
--   Aligns with the Web platform
--   Faster because native lazy loading doesn't require hydration
+- Ships less client-side JavaScript
+- Easier to style and configure
+- More accessible requiring `alt` tags by default
+- Aligns with the Web platform
+- Faster because native lazy loading doesn't require hydration
 
 ```
 import Image from 'next/image';
@@ -202,10 +202,10 @@ npx @next/codemod next-image-to-legacy-image ./pages
 
 Next.js 13 introduces a **brand new font system** that:
 
--   Automatically optimizes your fonts, including custom fonts
--   Removes external network requests for improved privacy and performance
--   Built-in automatic self-hosting for any font file
--   Zero layout shift automatically using the CSS [`size-adjust`](https://web.dev/css-size-adjust/) property
+- Automatically optimizes your fonts, including custom fonts
+- Removes external network requests for improved privacy and performance
+- Built-in automatic self-hosting for any font file
+- Zero layout shift automatically using the CSS [`size-adjust`](https://web.dev/css-size-adjust/) property
 
 This new font system allows you to conveniently use all Google Fonts with performance and privacy in mind. CSS and font files are downloaded at build time and self-hosted with the rest of your static assets. **No requests are sent to Google by the browser.**
 
@@ -366,28 +366,18 @@ Sending responses from Middleware currently requires the `experimental.allowMidd
 
 ## [Breaking Changes](https://nextjs.org/blog/next-13#breaking-changes)
 
--   The minimum React version has been bumped from 17.0.2 to 18.2.0.
--   The minimum Node.js version has been bumped from 12.22.0 to 14.6.0, since 12.x has reached end-of-life ([PR](https://github.com/vercel/next.js/pull/41482)).
--   The `swcMinify` configuration property was changed from `false` to `true`. See [Next.js Compiler](https://nextjs.org/docs/advanced-features/compiler) for more info.
--   The `next/image` import was renamed to `next/legacy/image`. The `next/future/image` import was renamed to `next/image`. A [codemod is available](https://nextjs.org/docs/advanced-features/codemods#next-image-to-legacy-image) to safely and automatically rename your imports.
--   The `next/link` child can no longer be `<a>`. Add the `legacyBehavior` prop to use the legacy behavior or remove the `<a>` to upgrade. A [codemod is available](https://nextjs.org/docs/advanced-features/codemods#new-link) to automatically upgrade your code.
--   Routes are no longer prefetched when the `User-Agent` is a bot.
--   The deprecated `target` option of `next.config.js` has been removed.
--   The supported browsers have been changed to drop Internet Explorer and target modern browsers. You can still use Browserslist to change targeted browsers.
-    -   Chrome 64+
-    -   Edge 79+
-    -   Firefox 67+
-    -   Opera 51+
-    -   Safari 12+
+- The minimum React version has been bumped from 17.0.2 to 18.2.0.
+- The minimum Node.js version has been bumped from 12.22.0 to 14.6.0, since 12.x has reached end-of-life ([PR](https://github.com/vercel/next.js/pull/41482)).
+- The `swcMinify` configuration property was changed from `false` to `true`. See [Next.js Compiler](https://nextjs.org/docs/advanced-features/compiler) for more info.
+- The `next/image` import was renamed to `next/legacy/image`. The `next/future/image` import was renamed to `next/image`. A [codemod is available](https://nextjs.org/docs/advanced-features/codemods#next-image-to-legacy-image) to safely and automatically rename your imports.
+- The `next/link` child can no longer be `<a>`. Add the `legacyBehavior` prop to use the legacy behavior or remove the `<a>` to upgrade. A [codemod is available](https://nextjs.org/docs/advanced-features/codemods#new-link) to automatically upgrade your code.
+- Routes are no longer prefetched when the `User-Agent` is a bot.
+- The deprecated `target` option of `next.config.js` has been removed.
+- The supported browsers have been changed to drop Internet Explorer and target modern browsers. You can still use Browserslist to change targeted browsers.
+  - Chrome 64+
+  - Edge 79+
+  - Firefox 67+
+  - Opera 51+
+  - Safari 12+
 
 To learn more, check out the [upgrade guide](https://nextjs.org/docs/upgrading).
-
-## [Community](https://nextjs.org/blog/next-13#community)
-
-Six years ago, we released Next.js to the public. We set out to build a zero-configuration React framework that simplifies your developer experience. Looking back, it's incredible to see how the community has grown, and what we've been able to ship together. Let's keep going.
-
-Next.js is the result of the combined work of **over 2,400 individual developers**, industry partners like Google and Meta, and our core team. With over 3 million npm downloads per week and 94,000 GitHub stars, Next.js is one of the most popular ways of building the Web.
-
-Special thanks to the Aurora team at Google Chrome who helped with the foundational research and experiments that led to this release.
-
-This release was brought to you by the contributions of: @ijjk, @huozhi, @HaNdTriX, @iKethavel, @timneutkens, @shuding, @rishabhpoddar, @hanneslund, @balazsorban44, @devknoll, @anthonyshew, @TomerAberbach, @philippbosch, @styfle, @mauriciomutte, @hayitsdavid, @abdennor, @Kikobeats, @cjdunteman, @Mr-Afonso, @kdy1, @jaril, @abdallah-nour, @North15, @feedthejim, @brunocrosier, @Schniz, @sedlukha, @hashlash, @Ethan-Arrowood, @fireairforce, @migueloller, @leerob, @janicklas-ralph, @Trystanr, @atilafassina, @nramkissoon, @kasperadk, @valcosmos, @henriqueholtz, @nip10, @jesstelford, @lorensr, @AviAvinav, @SukkaW, @jaycedotbin, @saurabhburade, @notrab, @kwonoj, @sanruiz, @angeloashmore, @falsepopsky, @fmontes, @Gebov, @UltiRequiem, @p13lgst, @Simek, @mrkldshv, @thomasballinger, @kyliau, @AdarshKonchady, @endymion1818, @pedro757, @perkinsjr, @gnoff, @jridgewell, @silvioprog, @mabels, @nialexsan, @feugy, @jackromo888, @crazyurus, @EarlGeorge, @MariaSolOs, @lforst, @maximbaz, @maxam2017, @teobler, @Nutlope, @sunwoo0706, @WestonThayer, @Brooooooklyn, @Nsttt, @charlypoly, @aprendendofelipe, @sviridoff, @jackton1, @nuta, @Rpaudel379, @marcialca, @MarDi66, @ismaelrumzan, @javivelasco, @eltociear, and @hiro0218.

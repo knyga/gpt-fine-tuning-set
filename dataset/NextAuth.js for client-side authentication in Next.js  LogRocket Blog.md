@@ -49,8 +49,8 @@ NextAuth.js provides the `useSession()` React Hook, which can be used to check t
 
 ## Requirements
 
--   Node.js 10.13 or later installed on your local machine
--   Basics of [React.js](http://reactjs.org/)
+- Node.js 10.13 or later installed on your local machine
+- Basics of [React.js](http://reactjs.org/)
 
 ## Creating the Next.js starter application
 
@@ -112,10 +112,10 @@ Now that we have the Next.js starter application set up, we’re ready to learn 
 
 This NextAuth.js client-side authentication tutorial will cover the following:
 
--   [Installing NextAuth.js](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#installing-nextauth-js)
--   [Creating a GitHub OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-github-oauth-app)
--   [Creating a Google OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-google-oauth-app)
--   [Creating a Facebook OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-facebook-oauth-app)
+- [Installing NextAuth.js](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#installing-nextauth-js)
+- [Creating a GitHub OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-github-oauth-app)
+- [Creating a Google OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-google-oauth-app)
+- [Creating a Facebook OAuth app](https://blog.logrocket.com/nextauth-js-for-next-js-client-side-authentication/#creating-a-facebook-oauth-app)
 
 ### Install NextAuth.js
 
@@ -145,9 +145,9 @@ We’re going to give users the choice to log in to our app using their GitHub, 
 
 Next, we’re going to add a GitHub Authentication Provider, which essentially allows users to log in to our app using their GitHub account. But first, we need to create a [GitHub OAuth app](https://github.com/settings/developers). Click on **New OAuth app** and fill out the form accordingly. Check out the [official docs](https://docs.github.com/en/free-pro-team@latest/developers/apps/creating-an-oauth-app) to learn more.
 
--   **Application name**: This is the name of your application. It can be called anything — it doesn’t really matter
--   **Homepage URL**: This is the full URL to the homepage of our app. Since we are still in development mode, we are going to fill in the full URL that our development server is running on. In this case, it is `[http://localhost:3000](http://localhost:3000/)`
--   **Authorization callback URL**: This is the URL that GitHub will redirect our users to after they have been successfully logged in to our app. It should be your homepage URL plus `/api/auth/callback`, resulting in `[http://localhost:3000/api/auth/callback](http://localhost:3000/api/auth/callback)`
+- **Application name**: This is the name of your application. It can be called anything — it doesn’t really matter
+- **Homepage URL**: This is the full URL to the homepage of our app. Since we are still in development mode, we are going to fill in the full URL that our development server is running on. In this case, it is `[http://localhost:3000](http://localhost:3000/)`
+- **Authorization callback URL**: This is the URL that GitHub will redirect our users to after they have been successfully logged in to our app. It should be your homepage URL plus `/api/auth/callback`, resulting in `[http://localhost:3000/api/auth/callback](http://localhost:3000/api/auth/callback)`
 
 After registration of our OAuth App, GitHub creates a Client ID and Client Secret specifically for our newly created app. Copy the client ID and secret key to your clipboard. Click on **Generate new client secret** and get a client secret.
 
@@ -217,7 +217,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-By wrapping our component in a `Session``Provider`, we enable session state to be shared between pages. This, in turn, will preserve our state during page navigation, improve performance, and reduce network traffic.
+By wrapping our component in a ` Session``Provider `, we enable session state to be shared between pages. This, in turn, will preserve our state during page navigation, improve performance, and reduce network traffic.
 
 Next, open the `components/Header.js` file and import `useSession`, `signIn`, and `signOut` from `next-auth/client`:
 
@@ -242,8 +242,8 @@ Replace everything in the return statement in `components/Header.js` with the fo
       <Link href='/'>
         <a className='logo'>NextAuth.js</a>
       </Link>
-           {session && <a href="#" onClick={handleSignout} className="btn-signin">Sign out</a>  } 
-           {!session && <a href="#" onClick={handleSignin}  className="btn-signin">Sign in</a>  } 
+           {session && <a href="#" onClick={handleSignout} className="btn-signin">Sign out</a>  }
+           {!session && <a href="#" onClick={handleSignin}  className="btn-signin">Sign in</a>  }
     </div>
 ```
 
@@ -253,7 +253,7 @@ We need to create the `handleSignin` and `handleSignout` methods to enable our u
 const handleSignin = (e) => {
       e.preventDefault()
       signIn()
-  }    
+  }
 const handleSignout = (e) => {
       e.preventDefault()
       signOut()
@@ -354,10 +354,10 @@ Create Google OAuth client ID.
 
 You will be asked to fill in the following:
 
--   **Choose an Application Type**: Select **Web Application**
--   **Name**: This is the name of your application
--   **Authorized JavaScript origins**: This is the full URL to the homepage of our app. Since we are still in development mode, we are going to fill in the full URL our development server is running on. In this case, it is `[http://localhost:3000](http://localhost:3000/)`
--   **Authorized redirect URIs**: Users will be redirected to this path after they have authenticated with Google: `[http://localhost:3000/api/auth/callback/google](http://localhost:3000/api/auth/callback/google)`
+- **Choose an Application Type**: Select **Web Application**
+- **Name**: This is the name of your application
+- **Authorized JavaScript origins**: This is the full URL to the homepage of our app. Since we are still in development mode, we are going to fill in the full URL our development server is running on. In this case, it is `[http://localhost:3000](http://localhost:3000/)`
+- **Authorized redirect URIs**: Users will be redirected to this path after they have authenticated with Google: `[http://localhost:3000/api/auth/callback/google](http://localhost:3000/api/auth/callback/google)`
 
 Next, a popup will display your client ID and client secret. Copy and add them o your `env.local` file:
 
@@ -420,7 +420,7 @@ Login options.
 
 Click on **Facebook Login** and select **Web**. Now, add the following:
 
--   **Site URL**: Complete URL to your development server `[http://localhost:3000/](http://localhost:3000/)`
+- **Site URL**: Complete URL to your development server `[http://localhost:3000/](http://localhost:3000/)`
 
 To get your app ID and app secret, navigate to the **Basic** section in **Settings**, copy them, and add them to your `env.local` file as follows:
 
@@ -485,13 +485,3 @@ We’ve covered most of the use cases, but there is a lot more you can do with N
 If you are hungry for more content, check out the [tutorial page](https://next-auth.js.org/tutorials) from the NextAuth.js official docs.
 
 Let me know in the comments section below what you thought of this tutorial. You can also reach me on [Twitter](https://twitter.com/ejirocodes) and [GitHub](https://github.com/ejirocodes). Thank you for reading and stay tuned.
-
-## [LogRocket](https://lp.logrocket.com/blg/nextjs-signup): Full visibility into production Next.js apps
-
-Debugging Next applications can be difficult, especially when users experience issues that are difficult to reproduce. If you’re interested in monitoring and tracking state, automatically surfacing JavaScript errors, and tracking slow network requests and component load time, [try LogRocket](https://lp.logrocket.com/blg/nextjs-signup). [![](https://files.readme.io/27c94e7-Image_2017-06-05_at_9.46.04_PM.png)](https://lp.logrocket.com/blg/nextjs-signup)[![LogRocket Dashboard Free Trial Banner](https://blog.logrocket.com/wp-content/uploads/2017/03/1d0cd-1s_rmyo6nbrasp-xtvbaxfg.png)](https://lp.logrocket.com/blg/nextjs-signup)
-
-[LogRocket](https://lp.logrocket.com/blg/nextjs-signup) is like a DVR for web and mobile apps, recording literally everything that happens on your Next.js app. Instead of guessing why problems happen, you can aggregate and report on what state your application was in when an issue occurred. LogRocket also monitors your app's performance, reporting with metrics like client CPU load, client memory usage, and more.
-
-The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.
-
-Modernize how you debug your Next.js apps — [start monitoring for free](https://lp.logrocket.com/blg/nextjs-signup).

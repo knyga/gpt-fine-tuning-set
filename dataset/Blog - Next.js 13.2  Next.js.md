@@ -1,13 +1,13 @@
 Next.js 13.2 includes major improvements to the App Router (`app`) in preparation for stability:
 
--   [**Built-in SEO Support:**](https://nextjs.org/blog/next-13#built-in-seo-support-with-new-metadata-api) New Metadata API to set static and dynamic `meta` tags.
--   [**Route Handlers**:](https://nextjs.org/blog/next-13#custom-route-handlers) Custom request handlers, built on Web `Request` and `Response`.
--   [**MDX for Server Components:**](https://nextjs.org/blog/next-13#mdx-for-server-components) Use React components inside Markdown, server-side only.
--   [**Rust MDX Parser:**](https://nextjs.org/blog/next-13#rust-mdx-parser) Faster Markdown parsing with a brand new Rust plugin.
--   [**Improved Error Overlay:**](https://nextjs.org/blog/next-13#improved-error-overlay) Separate Next.js and React stack traces for improved readability.
--   [**Statically Typed Links (Beta):**](https://nextjs.org/blog/next-13#statically-typed-links) Prevent broken links with `next/link` and TypeScript.
--   [**Turbopack Improvements (Alpha):**](https://nextjs.org/blog/next-13#turbopack-improvements) Compatibility with Webpack loaders and improved support.
--   [**Next.js Cache (Beta):**](https://nextjs.org/blog/next-13#nextjs-cache) Progressive ISR and faster re-deploys of code changes.
+- [**Built-in SEO Support:**](https://nextjs.org/blog/next-13#built-in-seo-support-with-new-metadata-api) New Metadata API to set static and dynamic `meta` tags.
+- [**Route Handlers**:](https://nextjs.org/blog/next-13#custom-route-handlers) Custom request handlers, built on Web `Request` and `Response`.
+- [**MDX for Server Components:**](https://nextjs.org/blog/next-13#mdx-for-server-components) Use React components inside Markdown, server-side only.
+- [**Rust MDX Parser:**](https://nextjs.org/blog/next-13#rust-mdx-parser) Faster Markdown parsing with a brand new Rust plugin.
+- [**Improved Error Overlay:**](https://nextjs.org/blog/next-13#improved-error-overlay) Separate Next.js and React stack traces for improved readability.
+- [**Statically Typed Links (Beta):**](https://nextjs.org/blog/next-13#statically-typed-links) Prevent broken links with `next/link` and TypeScript.
+- [**Turbopack Improvements (Alpha):**](https://nextjs.org/blog/next-13#turbopack-improvements) Compatibility with Webpack loaders and improved support.
+- [**Next.js Cache (Beta):**](https://nextjs.org/blog/next-13#nextjs-cache) Progressive ISR and faster re-deploys of code changes.
 
 Update today by running:
 
@@ -220,13 +220,13 @@ We've also [improved the error output](https://github.com/facebook/react/issues/
 
 We've been focused on supporting existing Next.js features in Turbopack and improving overall stability as we move towards beta. Since our last release, we've added:
 
--   Support for `next/dynamic`
--   Support for `rewrites`, `redirects`, `headers` , and `pageExtensions` in `next.config.js`
--   Support for 404s and errors in `pages`
--   Support for CSS modules `composes: ... from ...`
--   Improved Fast Refresh reliability and error recovery
--   Improved CSS precedence handling
--   Improved compile-time evaluation
+- Support for `next/dynamic`
+- Support for `rewrites`, `redirects`, `headers` , and `pageExtensions` in `next.config.js`
+- Support for 404s and errors in `pages`
+- Support for CSS modules `composes: ... from ...`
+- Improved Fast Refresh reliability and error recovery
+- Improved CSS precedence handling
+- Improved compile-time evaluation
 
 We've also fixed many bugs and improved stability while dogfooding Turbopack with some of our largest internal Next.js applications and with early Vercel customers.
 
@@ -282,9 +282,9 @@ module.exports = {
 
 Next.js 13.2 introduces the new Next.js Cache (beta), an evolution of [ISR](https://beta.nextjs.org/docs/data-fetching/revalidating) that unlocks:
 
--   Progressive ISR at the component level
--   Faster refreshes without network requests
--   Faster redeploys of code changes to static pages
+- Progressive ISR at the component level
+- Faster refreshes without network requests
+- Faster redeploys of code changes to static pages
 
 For pages that are entirely static, ISR works the same way as today. For pages that have more granular data fetching, mixing static and dynamic, the Next.js Cache uses a more granular, ephemeral cache.
 
@@ -327,23 +327,10 @@ For developers looking to further customize and modify the core of the Next.js C
 
 ## [Other Improvements](https://nextjs.org/blog/next-13#other-improvements)
 
--   **Fonts:** Following incredible community adoption, `@next/font` is now built-in to Next.js as `next/font`. This means you no longer need to install `@next/font` separately. [Learn more](https://nextjs.org/docs/basic-features/font-optimization).
--   **Fonts:** The default `font-display` property for `next/font` has been changed to `font-display: swap` instead of `optional` based on community feedback.
--   **Performance:** Optimized the build process to use less memory, ~550MB saved in our tests ([PR](https://github.com/vercel/next.js/pull/45639)).
--   **Performance:** Avoid loading project configuration multiple times, leading to ~400ms faster builds (average) in our tests ([PR](https://github.com/vercel/next.js/pull/45637)).
--   **Performance:** Optimized the error component to reduce 0.4kb of the HTML payload without changing the styling ([PR](https://github.com/vercel/next.js/pull/45586)).
--   **Performance:** Reduced the edge bundle size by ~130KB, almost half of the size, to further decrease the cold boot size when deployed to edge environments like Vercel ([PR](https://github.com/vercel/next.js/pull/45601)).
--   **Security:** Added configuration `images.contentDispositionType: "attachment"` to force download images when visiting the Image Optimization API directly ([PR](https://github.com/vercel/next.js/pull/46254)).
-
-## [Community](https://nextjs.org/blog/next-13#community)
-
-Next.js is the result of the combined work of over 2,500 individual developers, industry partners like Google and Meta, and our core team at Vercel. With over 3.9 million npm downloads per week and 100,000+ GitHub stars, Next.js is one of the most popular ways of building the Web.
-
-Join the community on [GitHub Discussions](https://github.com/vercel/next.js/discussions), [Reddit](https://www.reddit.com/r/nextjs/), and [Discord](https://nextjs.org/discord).
-
-This release was brought to you by:
-
--   The **Next.js** team: [Balazs](https://github.com/balazsorban44), [Hannes](https://github.com/hanneslund), [Jan](https://github.com/jankaifer), [Jiachi](https://github.com/huozhi), [Jimmy](https://github.com/feedthejim), [JJ](https://github.com/ijjk), [Josh](https://github.com/gnoff), [Sebastian](https://github.com/sebmarkbage), [Shu](https://github.com/shuding), [Steven](https://github.com/styfle), [Tim](https://github.com/timneutkens), [Wyatt](https://github.com/wyattjoh), and [Andrew](https://twitter.com/acdlite).
--   The **Turbopack** team: [Alex](https://github.com/alexkirsz), [Donny](https://github.com/kdy1), [Justin](https://github.com/jridgewell), [Leah](https://github.com/forsakenharmony), [LongYinan](https://github.com/brooooooklyn), [Maia](https://github.com/padmaia), [OJ](https://github.com/kwonoj), [Tobias](https://github.com/sokra), and [Will](https://github.com/wbinnssmith).
-
-And the contributions of: @timneutkens, @loettz, @okcoker, @clive-h-townsend, @shuding, @JanKaifer, @sepiropht, @hanneslund, @huozhi, @aralroca, @balazsorban44, @cristobaldominguez95, @vinaykulk621, @Brooooooklyn, @feedthejim, @samsisle, @MarDi66, @styfle, @therealrinku, @sebmarkbage, @cravend, @hu0p, @kdy1, @ijjk, @juzhiyuan, @IvanKiral, @LukeSchlangen, @wojtekolek, @samdenty, @Josehower, @bennettdams, @SCG82, @mike-plummer, @kwonoj, @David0z, @denchance, @joulev, @wbinnssmith, @alexkirsz, @UnknownMonk, @leerob, @sairajchouhan, @imranbarbhuiya, @jomeswang, @ductnn, @thomasballinger, @chibicode, @jridgewell, @sreetamdas, @Juneezee, @SukkaW, @wyattjoh, @michaeloliverx, @cattmote, @joefreeman, @valentincostam, @qrohlf, @ossan-engineer, @rishabhpoddar, @vasucp1207, @Schniz, @andrii-bodnar, @gergelyke, @abstractvector, @wherehows, @BrodaNoel, @taep96, @abe1272001, @0xadada, @nbouvrette, @teobler, @lubakravche, @molebox, and @hiddenest.
+- **Fonts:** Following incredible community adoption, `@next/font` is now built-in to Next.js as `next/font`. This means you no longer need to install `@next/font` separately. [Learn more](https://nextjs.org/docs/basic-features/font-optimization).
+- **Fonts:** The default `font-display` property for `next/font` has been changed to `font-display: swap` instead of `optional` based on community feedback.
+- **Performance:** Optimized the build process to use less memory, ~550MB saved in our tests ([PR](https://github.com/vercel/next.js/pull/45639)).
+- **Performance:** Avoid loading project configuration multiple times, leading to ~400ms faster builds (average) in our tests ([PR](https://github.com/vercel/next.js/pull/45637)).
+- **Performance:** Optimized the error component to reduce 0.4kb of the HTML payload without changing the styling ([PR](https://github.com/vercel/next.js/pull/45586)).
+- **Performance:** Reduced the edge bundle size by ~130KB, almost half of the size, to further decrease the cold boot size when deployed to edge environments like Vercel ([PR](https://github.com/vercel/next.js/pull/45601)).
+- **Security:** Added configuration `images.contentDispositionType: "attachment"` to force download images when visiting the Image Optimization API directly ([PR](https://github.com/vercel/next.js/pull/46254)).

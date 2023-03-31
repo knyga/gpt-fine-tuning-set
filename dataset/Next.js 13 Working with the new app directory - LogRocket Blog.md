@@ -4,25 +4,25 @@ While still supporting the same file system-based routing, which uses the `pages
 
 ## Table of contents
 
--   [New features in Next.js 13](https://blog.logrocket.com/next-js-13-new-app-directory/#concepts)
-    -   [Page directory vs. app directory](https://blog.logrocket.com/next-js-13-new-app-directory/#page-directory-vs-app-directory)
-    -   [Routing with the app directory](https://blog.logrocket.com/next-js-13-new-app-directory/#routing-app-directory)
-    -   [`loading.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#loading-tsx-file)
-    -   [`error.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#error-tsx)
-    -   [`template.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#template-tsx)
--   [Caveats of using the `app` directory](https://blog.logrocket.com/next-js-13-new-app-directory/#caveats)
-    -   [Mandatory root layout](https://blog.logrocket.com/next-js-13-new-app-directory/#mandatory-root-layout)
-    -   [Head tag](https://blog.logrocket.com/next-js-13-new-app-directory/#head-tag)
-    -   [Route groups](https://blog.logrocket.com/next-js-13-new-app-directory/#route-group)
-    -   [Server components](https://blog.logrocket.com/next-js-13-new-app-directory/#server-components)
--   [Hands-on with Next.js 13](https://blog.logrocket.com/next-js-13-new-app-directory/#hands-on)
-    -   [Project creation](https://blog.logrocket.com/next-js-13-new-app-directory/#project-creation)
-    -   [The page and layout file](https://blog.logrocket.com/next-js-13-new-app-directory/#page-layout-file)
-    -   [Testing the layout](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-layout)
-    -   [Testing the error file](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-error-file)
-    -   [Testing the loading file](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-loading-file)
--   [Data fetching](https://blog.logrocket.com/next-js-13-new-app-directory/#data-fetching)
-    -   [Client and server-side rendering](https://blog.logrocket.com/next-js-13-new-app-directory/#client-server-side-rendering)
+- [New features in Next.js 13](https://blog.logrocket.com/next-js-13-new-app-directory/#concepts)
+  - [Page directory vs. app directory](https://blog.logrocket.com/next-js-13-new-app-directory/#page-directory-vs-app-directory)
+  - [Routing with the app directory](https://blog.logrocket.com/next-js-13-new-app-directory/#routing-app-directory)
+  - [`loading.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#loading-tsx-file)
+  - [`error.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#error-tsx)
+  - [`template.tsx` file](https://blog.logrocket.com/next-js-13-new-app-directory/#template-tsx)
+- [Caveats of using the `app` directory](https://blog.logrocket.com/next-js-13-new-app-directory/#caveats)
+  - [Mandatory root layout](https://blog.logrocket.com/next-js-13-new-app-directory/#mandatory-root-layout)
+  - [Head tag](https://blog.logrocket.com/next-js-13-new-app-directory/#head-tag)
+  - [Route groups](https://blog.logrocket.com/next-js-13-new-app-directory/#route-group)
+  - [Server components](https://blog.logrocket.com/next-js-13-new-app-directory/#server-components)
+- [Hands-on with Next.js 13](https://blog.logrocket.com/next-js-13-new-app-directory/#hands-on)
+  - [Project creation](https://blog.logrocket.com/next-js-13-new-app-directory/#project-creation)
+  - [The page and layout file](https://blog.logrocket.com/next-js-13-new-app-directory/#page-layout-file)
+  - [Testing the layout](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-layout)
+  - [Testing the error file](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-error-file)
+  - [Testing the loading file](https://blog.logrocket.com/next-js-13-new-app-directory/#testing-loading-file)
+- [Data fetching](https://blog.logrocket.com/next-js-13-new-app-directory/#data-fetching)
+  - [Client and server-side rendering](https://blog.logrocket.com/next-js-13-new-app-directory/#client-server-side-rendering)
 
 ## New features in Next.js 13
 
@@ -273,7 +273,7 @@ export default function Error({
   reset,
 }) {
   useEffect(() => {
-    
+
     console.error(error);
   }, [error]);
 
@@ -364,13 +364,3 @@ That wraps up almost all the changes that were introduced with the `app` directo
 Although at the time of writing, these new features are in beta and are bound to change slightly before being officially released, we can agree that they provide much more flexibility to configure our UI through the loading, error, and layout components. The simplicity of the native Fetch API on server components is also a great addition.
 
 Here’s the link to the [code](https://github.com/kokanek/nextjs-13) that we worked with. Feel free to explore!
-
-## [LogRocket](https://lp.logrocket.com/blg/nextjs-signup): Full visibility into production Next.js apps
-
-Debugging Next applications can be difficult, especially when users experience issues that are difficult to reproduce. If you’re interested in monitoring and tracking state, automatically surfacing JavaScript errors, and tracking slow network requests and component load time, [try LogRocket](https://lp.logrocket.com/blg/nextjs-signup). [![](https://files.readme.io/27c94e7-Image_2017-06-05_at_9.46.04_PM.png)](https://lp.logrocket.com/blg/nextjs-signup)[![LogRocket Dashboard Free Trial Banner](https://blog.logrocket.com/wp-content/uploads/2017/03/1d0cd-1s_rmyo6nbrasp-xtvbaxfg.png)](https://lp.logrocket.com/blg/nextjs-signup)
-
-[LogRocket](https://lp.logrocket.com/blg/nextjs-signup) is like a DVR for web and mobile apps, recording literally everything that happens on your Next.js app. Instead of guessing why problems happen, you can aggregate and report on what state your application was in when an issue occurred. LogRocket also monitors your app's performance, reporting with metrics like client CPU load, client memory usage, and more.
-
-The LogRocket Redux middleware package adds an extra layer of visibility into your user sessions. LogRocket logs all actions and state from your Redux stores.
-
-Modernize how you debug your Next.js apps — [start monitoring for free](https://lp.logrocket.com/blg/nextjs-signup).
